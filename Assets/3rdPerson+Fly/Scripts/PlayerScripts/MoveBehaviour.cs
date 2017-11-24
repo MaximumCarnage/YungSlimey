@@ -17,6 +17,8 @@ public class MoveBehaviour : GenericBehaviour
 	private bool jump;                              // Boolean to determine whether or not the player started a jump.
 	private bool isColliding;
 
+	private bool isWalking;
+
 	// Start is always called after any Awake functions.
 	void Start() 
 	{

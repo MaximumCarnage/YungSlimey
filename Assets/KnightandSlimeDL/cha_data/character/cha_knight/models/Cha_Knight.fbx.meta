@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: df0777a2e75ec7048b28e7c394efbd53
-timeCreated: 1511416229
+timeCreated: 1511487705
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -302,19 +302,9 @@ ModelImporter:
       position: {x: 0.099999994, y: -0.0020000238, z: 0.0059999996}
       rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
       scale: {x: 1, y: 1, z: 1}
-    - name: UpVector_Leg_L
-      parentName: Root
-      position: {x: -0.099999994, y: 0.098, z: 0.144}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: UpVector_Leg_R
-      parentName: Root
-      position: {x: 0.099999994, y: 0.098, z: 0.144}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: Skeleton_Root
       parentName: Root
-      position: {x: -0, y: 0.201, z: 0.019}
+      position: {x: 0, y: 0.22620656, z: 0.019}
       rotation: {x: 0.5012804, y: -0.49871635, z: -0.5012804, w: -0.49871635}
       scale: {x: 1, y: 1, z: 1}
     - name: Locator_Leg_L
@@ -377,21 +367,6 @@ ModelImporter:
       position: {x: -0.000499936, y: -4.36481e-17, z: 0.0625}
       rotation: {x: 6.4925684e-16, y: 0.07065021, z: 2.5237861e-17, w: 0.99750113}
       scale: {x: 1, y: 1, z: 1}
-    - name: Skeleton_Arm_R
-      parentName: Skeleton_Spine02
-      position: {x: 0.009312023, y: -0.09149999, z: 0.056154132}
-      rotation: {x: -0.058490723, y: -0.69819045, z: 0.71156, w: -0.052832756}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Skeleton_ForeArm_R
-      parentName: Skeleton_Arm_R
-      position: {x: 7.155734e-18, y: 0, z: 0.07701622}
-      rotation: {x: -0.009739083, y: -0.0032452687, z: -0.00009469016, w: 0.9999473}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Skeleton_Hand_R
-      parentName: Skeleton_ForeArm_R
-      position: {x: 5.3125906e-18, y: -1.6653345e-16, z: 0.066}
-      rotation: {x: -0.000000088890516, y: 0.7071068, z: -0.70710677, w: -0.000000088890516}
-      scale: {x: 1, y: 1, z: 1}
     - name: Skeleton_Arm_L
       parentName: Skeleton_Spine02
       position: {x: 0.009311987, y: 0.09150001, z: 0.05615412}
@@ -407,10 +382,35 @@ ModelImporter:
       position: {x: -1.0842022e-19, y: 5.551115e-17, z: 0.066}
       rotation: {x: -0.00000008433785, y: 0.7071068, z: 0.70710677, w: 0.00000008433785}
       scale: {x: 1, y: 1, z: 1}
+    - name: Skeleton_Arm_R
+      parentName: Skeleton_Spine02
+      position: {x: 0.009312023, y: -0.09149999, z: 0.056154132}
+      rotation: {x: -0.058490723, y: -0.69819045, z: 0.71156, w: -0.052832756}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Skeleton_ForeArm_R
+      parentName: Skeleton_Arm_R
+      position: {x: 7.155734e-18, y: 0, z: 0.07701622}
+      rotation: {x: -0.009739083, y: -0.0032452687, z: -0.00009469016, w: 0.9999473}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Skeleton_Hand_R
+      parentName: Skeleton_ForeArm_R
+      position: {x: 5.3125906e-18, y: -1.6653345e-16, z: 0.066}
+      rotation: {x: -0.000000088890516, y: 0.7071068, z: -0.70710677, w: -0.000000088890516}
+      scale: {x: 1, y: 1, z: 1}
     - name: Skeleton_Head
       parentName: Skeleton_Spine02
       position: {x: 0.0009876356, y: 1.4055395e-17, z: 0.1277342}
       rotation: {x: 0.5403035, y: -0.54030347, z: -0.4561492, w: 0.45614928}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpVector_Leg_L
+      parentName: Root
+      position: {x: -0.099999994, y: 0.098, z: 0.144}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpVector_Leg_R
+      parentName: Root
+      position: {x: 0.099999994, y: 0.098, z: 0.144}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Shadow
       parentName: Group Locator
