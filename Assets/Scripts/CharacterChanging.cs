@@ -27,7 +27,8 @@ public class CharacterChanging : MonoBehaviour {
 				m_currentType = characterType.ASTRAL;
 				Instantiate(m_sleepyPlayer,m_currentAvatar.position,Quaternion.identity);
 				m_camScript.player=m_astralAvatar.transform;
-				
+				m_astralAvatar.transform.position=m_currentAvatar.position;
+				m_currentAvatar=m_astralAvatar.transform;
 				 m_normalAvatar.SetActive(false);
 				 m_astralAvatar.SetActive(true);
 			
