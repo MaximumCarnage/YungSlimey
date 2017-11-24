@@ -360,6 +360,11 @@ Prefab:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114870441534616312, guid: 8d1fc66d363579b41b04cc7eece3dfc1,
+        type: 2}
+      propertyPath: jumpHeight
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d1fc66d363579b41b04cc7eece3dfc1, type: 2}
   m_IsPrefabParent: 0
