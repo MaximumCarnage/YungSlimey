@@ -18,7 +18,7 @@ public class CharacterChanging : MonoBehaviour {
 
 	void Update(){
 		
-		if(Input.GetKey(KeyCode.Space)){
+		if(Input.GetKey(KeyCode.O)){
 			if(m_currentType == characterType.NORMAL){
 				m_currentType = characterType.ASTRAL;
 				 m_normalAvatar.SetActive(false);
