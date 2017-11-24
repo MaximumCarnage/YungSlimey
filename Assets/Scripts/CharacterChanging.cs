@@ -7,7 +7,7 @@ public class CharacterChanging : MonoBehaviour {
 
 	public GameObject m_astralAvatar;
 	public GameObject m_normalAvatar;
-
+	public Transform  m_currentAvatar;
 	public characterType m_currentType;
 
 
@@ -21,16 +21,19 @@ public class CharacterChanging : MonoBehaviour {
 		if(Input.GetKey(KeyCode.O)){
 			if(m_currentType == characterType.NORMAL){
 				m_currentType = characterType.ASTRAL;
-				 m_normalAvatar.SetActive(false);
-				 m_astralAvatar.SetActive(true);
+				Instantiate(m_normalAvatar,transform.position,Quaternion.identity);
+				Destroy(m_currentAvatar.gameObject);
+				m_currentAvatar = Instantiate(m_astralAvatar,transform.position, Quaternion.identity);
+				 //m_normalAvatar.SetActive(false);
+				// m_astralAvatar.SetActive(true);
 			}
 			
 			
 		}
 		else{
 				m_currentType = characterType.NORMAL;
-				 m_astralAvatar.SetActive(false);
-				 m_normalAvatar.SetActive(true);
+				 //m_astralAvatar.SetActive(false);
+				// m_normalAvatar.SetActive(true);
 			}
 	}
 }
