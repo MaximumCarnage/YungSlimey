@@ -11,8 +11,7 @@ public class CharacterChanging : MonoBehaviour {
 	public GameObject m_sleepyPlayer;
 	public Transform  m_currentAvatar;
 	public characterType m_currentType;
-	public AnimatorController m_normalAnim; 
-	public AnimatorController m_astralAnim; 
+	
 	public Camera m_mainCam;
 	public ThirdPersonOrbitCamBasic m_camScript;
 	void Start(){
