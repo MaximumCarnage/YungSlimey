@@ -10,7 +10,7 @@ public class MoveBehaviour : GenericBehaviour
 	public string jumpButton = "Jump";              // Default jump button.
 	public float jumpHeight = 1.5f;                 // Default jump height.
 	public float jumpIntertialForce = 0.25f;          // Default horizontal inertial force when jumping.
-
+	public GameObject astralPrefab;
 	private float speed, speedSeeker;               // Moving speed.
 	private int jumpBool;                           // Animator variable related to jumping.
 	private int groundedBool;                       // Animator variable related to whether or not the player is on ground.
@@ -18,6 +18,8 @@ public class MoveBehaviour : GenericBehaviour
 	private bool isColliding;
 
 	private bool isWalking;
+	private bool canSleep = true;
+	public bool isSleeping = false;
 
 	// Start is always called after any Awake functions.
 	void Start() 
@@ -51,8 +53,21 @@ public class MoveBehaviour : GenericBehaviour
 
 		// Call the jump manager.
 		JumpManagement();
+		SleepManagement();
+		// if(!isSleeping){
+		// 	behaviourManager.GetAnim.SetBool("Asleep",false);
+		// 	this.enabled=true;
+		// }
 	}
-
+	void SleepManagement(){
+		if(Input.GetKeyDown(KeyCode.O) && canSleep && speed<=0){
+			behaviourManager.GetAnim.SetBool("Asleep",true);
+			this.enabled = false;
+			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position, Quaternion.identity);
+			behaviourManager.GetCamScript.player=tempastral.transform;
+			
+		}
+	}
 	// Execute the idle and walk/run jump movements.
 	void JumpManagement()
 	{
