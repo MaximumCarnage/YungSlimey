@@ -42,6 +42,12 @@ public class MoveBehaviour : GenericBehaviour
 	// Update is used to set features regardless the active behaviour.
 	void Update ()
 	{
+		if(isSleeping == true){
+			behaviourManager.GetAnim.SetBool("Asleep",true);
+		}
+		else{
+			behaviourManager.GetAnim.SetBool("Asleep",false);
+		}
 		// Get jump input.
 		if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
 		{
@@ -65,7 +71,7 @@ public class MoveBehaviour : GenericBehaviour
 	}
 	void SleepManagement(){
 		if(Input.GetKeyDown(KeyCode.O) && canSleep && speed<=0){
-			behaviourManager.GetAnim.SetBool("Asleep",true);
+			isSleeping = true;
 			this.enabled = false;
 			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position, Quaternion.identity);
 			tempastral.transform.parent = playGameContainer.transform;
@@ -91,8 +97,8 @@ public class MoveBehaviour : GenericBehaviour
 			if(behaviourManager.GetAnim.GetFloat(speedFloat) > 0.1)
 			{
 				// Temporarily change player friction to pass through obstacles.
-				GetComponent<CapsuleCollider>().material.dynamicFriction = 0f;
-				GetComponent<CapsuleCollider>().material.staticFriction = 0f;
+				GetComponent<Collider>().material.dynamicFriction = 0f;
+				GetComponent<Collider>().material.staticFriction = 0f;
 				// Set jump vertical impulse velocity.
 				float velocity = 2f * Mathf.Abs(Physics.gravity.y) * jumpHeight;
 				velocity = Mathf.Sqrt(velocity);
@@ -112,8 +118,8 @@ public class MoveBehaviour : GenericBehaviour
 			{
 				behaviourManager.GetAnim.SetBool(groundedBool, true);
 				// Change back player friction to default.
-				GetComponent<CapsuleCollider>().material.dynamicFriction = 0.6f;
-				GetComponent<CapsuleCollider>().material.staticFriction = 0.6f;
+				GetComponent<Collider>().material.dynamicFriction = 0.6f;
+				GetComponent<Collider>().material.staticFriction = 0.6f;
 				// Set jump related parameters.
 				jump = false;
 				behaviourManager.GetAnim.SetBool(jumpBool, false);

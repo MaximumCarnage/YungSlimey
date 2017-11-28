@@ -253,8 +253,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &573818812
-CapsuleCollider:
+--- !u!65 &573818812
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -262,10 +262,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.39830562
-  m_Height: 1.985035
-  m_Direction: 0
-  m_Center: {x: 0.49251747, y: -0.22148636, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.9480991, y: 0.5838012, z: 0.86177635}
+  m_Center: {x: 0.47404957, y: -0.2080994, z: 0.069111824}
 --- !u!114 &573818814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +293,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573818810}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d91044bddee1594cb64cddcbb5e76b9, type: 3}
   m_Name: 
@@ -473,6 +472,11 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 95766057953527490, guid: 321e11e70d972af4db7b02ecab9661ae,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e9d8aa6f8102664d8cbb0dd3778bb24, type: 2}
     m_RemovedComponents:
     - {fileID: 65681342573133614, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
