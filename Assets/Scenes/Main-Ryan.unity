@@ -196,7 +196,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 931dd8ffa072f794ea401128b54927e9, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 2000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
@@ -224,13 +224,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 548773634}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.0061613778, z: -0, w: 0.99998105}
+  m_LocalPosition: {x: -8.061295, y: -0.50988, z: -5}
+  m_LocalScale: {x: 0.4983019, y: -0.009878922, z: 0.49283385}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0.70600003, z: 0}
 --- !u!1 &904394190
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4098558705089694, guid: 8d1fc66d363579b41b04cc7eece3dfc1, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114055583840719176, guid: 8d1fc66d363579b41b04cc7eece3dfc1,
         type: 2}
