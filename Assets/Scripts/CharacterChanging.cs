@@ -22,6 +22,12 @@ public class CharacterChanging : MonoBehaviour {
 
 	void Update(){
 		
+		// if(m_currentType == characterType.BIG){
+		// 	m_camScript.player=m_playerTypes[3].transform;
+		// 	m_playerTypes[3].transform.position=m_currentAvatar.position;
+		// 	m_currentAvatar=m_playerTypes[3].transform;
+		// 	m_playerTypes[0].SetActive(false);
+		// }
 		if(Input.GetKeyDown(KeyCode.O) && m_currentType == characterType.NORMAL){
 				m_currentType = characterType.ASTRAL;
 				Instantiate(m_sleepyPlayer,m_currentAvatar.position,Quaternion.identity);
