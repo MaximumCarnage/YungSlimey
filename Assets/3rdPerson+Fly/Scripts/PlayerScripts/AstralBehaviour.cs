@@ -1,17 +1,13 @@
 ﻿using UnityEngine;
 
 // MoveBehaviour inherits from GenericBehaviour. This class corresponds to basic walk and run behaviour, it is the default behaviour.
-public class MoveBehaviour : GenericBehaviour
+public class AstralBehaviour : GenericBehaviour
 {
 	public float walkSpeed = 0.15f;                 // Default walk speed.
 	public float runSpeed = 50.0f;                   // Default run speed.
 	public float sprintSpeed = 2.0f;                // Default sprint speed.
 	public float speedDampTime = 0.1f;              // Default damp time to change the animations based on current speed.
-	public string jumpButton = "Jump";              // Default jump button.
-	public float jumpHeight = 1.5f;                 // Default jump height.
-	public float jumpIntertialForce = 0.25f;          // Default horizontal inertial force when jumping.
-	public GameObject astralPrefab;
-	public GameObject playGameContainer;
+	
 	private float speed, speedSeeker;               // Moving speed.
 	private int jumpBool;                           // Animator variable related to jumping.
 	private int groundedBool;                       // Animator variable related to whether or not the player is on ground.
@@ -19,17 +15,12 @@ public class MoveBehaviour : GenericBehaviour
 	private bool isColliding;
 
 	private bool isWalking;
-	private bool canSleep = true;
-	public bool isSleeping = false;
+
 
 	// Start is always called after any Awake functions.
 	void Start() 
 	{
-		// Set up the references.
-		jumpBool = Animator.StringToHash("Jump");
-		groundedBool = Animator.StringToHash("Grounded");
-		behaviourManager.GetAnim.SetBool (groundedBool, true);
-
+		
 		// Subscribe and register this behaviour as the default behaviour.
 		behaviourManager.SubscribeBehaviour (this);
 		behaviourManager.RegisterDefaultBehaviour (this.behaviourCode);
@@ -40,10 +31,7 @@ public class MoveBehaviour : GenericBehaviour
 	void Update ()
 	{
 		// Get jump input.
-		if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
-		{
-			jump = true;
-		}
+	
 	}
 
 	// LocalFixedUpdate overrides the virtual function of the base class.
@@ -51,80 +39,20 @@ public class MoveBehaviour : GenericBehaviour
 	{
 		// Call the basic movement manager.
 		MovementManagement(behaviourManager.GetH, behaviourManager.GetV);
+		
+	
+	}
+	void Posess(GameObject posessTarget){
+		posessTarget.GetComponent<MoveBehaviour>().enabled=true;
+		
 
-		// Call the jump manager.
-		JumpManagement();
-		SleepManagement();
-		// if(!isSleeping){
-		// 	behaviourManager.GetAnim.SetBool("Asleep",false);
-		// 	this.enabled=true;
-		// }
 	}
-	void SleepManagement(){
-		if(Input.GetKeyDown(KeyCode.O) && canSleep && speed<=0){
-			behaviourManager.GetAnim.SetBool("Asleep",true);
-			this.enabled = false;
-			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position, Quaternion.identity);
-			tempastral.transform.parent = playGameContainer.transform;
-			tempastral.name = "AstralPlayer";
-			tempastral.GetComponent<BasicBehaviour>().playerCamera = behaviourManager.playerCamera;	
-			Debug.Log(behaviourManager.playerCamera.name);
-			//tempastral.GetComponent<BasicBehaviour>().playerCamera 
-			
-			behaviourManager.GetCamScript.player=tempastral.transform;
-			
-		}
-	}
-	// Execute the idle and walk/run jump movements.
-	void JumpManagement()
-	{
-		// Start a new jump.
-		if (jump && !behaviourManager.GetAnim.GetBool(jumpBool) && behaviourManager.IsGrounded())
-		{
-			// Set jump related parameters.
-			behaviourManager.LockTempBehaviour(this.behaviourCode);
-			behaviourManager.GetAnim.SetBool(jumpBool, true);
-			// Is a locomotion jump?
-			if(behaviourManager.GetAnim.GetFloat(speedFloat) > 0.1)
-			{
-				// Temporarily change player friction to pass through obstacles.
-				GetComponent<CapsuleCollider>().material.dynamicFriction = 0f;
-				GetComponent<CapsuleCollider>().material.staticFriction = 0f;
-				// Set jump vertical impulse velocity.
-				float velocity = 2f * Mathf.Abs(Physics.gravity.y) * jumpHeight;
-				velocity = Mathf.Sqrt(velocity);
-				behaviourManager.GetRigidBody.AddForce(Vector3.up * velocity, ForceMode.VelocityChange);
-			}
-		}
-		// Is already jumping?
-		else if (behaviourManager.GetAnim.GetBool(jumpBool))
-		{
-			// Keep forward movement while in the air.
-			if (!behaviourManager.IsGrounded() && !isColliding)
-			{
-				behaviourManager.GetRigidBody.AddForce(transform.forward * jumpIntertialForce * Physics.gravity.magnitude * sprintSpeed, ForceMode.Acceleration);
-			}
-			// Has landed?
-			if ((behaviourManager.GetRigidBody.velocity.y < 0) && behaviourManager.IsGrounded())
-			{
-				behaviourManager.GetAnim.SetBool(groundedBool, true);
-				// Change back player friction to default.
-				GetComponent<CapsuleCollider>().material.dynamicFriction = 0.6f;
-				GetComponent<CapsuleCollider>().material.staticFriction = 0.6f;
-				// Set jump related parameters.
-				jump = false;
-				behaviourManager.GetAnim.SetBool(jumpBool, false);
-				behaviourManager.UnlockTempBehaviour(this.behaviourCode);
-			}
-		}
-	}
+
 
 	// Deal with the basic player movement
 	void MovementManagement(float horizontal, float vertical)
 	{
-		// On ground, obey gravity.
-		if (behaviourManager.IsGrounded())
-			behaviourManager.GetRigidBody.useGravity = true;
+		
 
 		// Call function that deals with player orientation.
 		Rotating(horizontal, vertical);
