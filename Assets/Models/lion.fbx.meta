@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: 85a58736f28445544b17cd2ba201f21a
+timeCreated: 1511826934
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: creature/alliancelionmount/alliancelion
+    100002: creature/alliancelionmount/alliancelion 1
+    100004: creature/alliancelionmount/alliancelion_bone_0
+    100006: creature/alliancelionmount/alliancelion_bone_1
+    100008: creature/alliancelionmount/alliancelion_bone_10
+    100010: creature/alliancelionmount/alliancelion_bone_11
+    100012: creature/alliancelionmount/alliancelion_bone_12
+    100014: creature/alliancelionmount/alliancelion_bone_13
+    100016: creature/alliancelionmount/alliancelion_bone_14
+    100018: creature/alliancelionmount/alliancelion_bone_15
+    100020: creature/alliancelionmount/alliancelion_bone_16
+    100022: creature/alliancelionmount/alliancelion_bone_17
+    100024: creature/alliancelionmount/alliancelion_bone_18
+    100026: creature/alliancelionmount/alliancelion_bone_19
+    100028: creature/alliancelionmount/alliancelion_bone_2
+    100030: creature/alliancelionmount/alliancelion_bone_20
+    100032: creature/alliancelionmount/alliancelion_bone_21
+    100034: creature/alliancelionmount/alliancelion_bone_22
+    100036: creature/alliancelionmount/alliancelion_bone_23
+    100038: creature/alliancelionmount/alliancelion_bone_24
+    100040: creature/alliancelionmount/alliancelion_bone_25
+    100042: creature/alliancelionmount/alliancelion_bone_26
+    100044: creature/alliancelionmount/alliancelion_bone_27
+    100046: creature/alliancelionmount/alliancelion_bone_28
+    100048: creature/alliancelionmount/alliancelion_bone_29
+    100050: creature/alliancelionmount/alliancelion_bone_3
+    100052: creature/alliancelionmount/alliancelion_bone_30
+    100054: creature/alliancelionmount/alliancelion_bone_31
+    100056: creature/alliancelionmount/alliancelion_bone_32
+    100058: creature/alliancelionmount/alliancelion_bone_33
+    100060: creature/alliancelionmount/alliancelion_bone_34
+    100062: creature/alliancelionmount/alliancelion_bone_4
+    100064: creature/alliancelionmount/alliancelion_bone_5
+    100066: creature/alliancelionmount/alliancelion_bone_54
+    100068: creature/alliancelionmount/alliancelion_bone_6
+    100070: creature/alliancelionmount/alliancelion_bone_7
+    100072: creature/alliancelionmount/alliancelion_bone_8
+    100074: creature/alliancelionmount/alliancelion_bone_9
+    100076: //RootNode
+    400000: creature/alliancelionmount/alliancelion
+    400002: creature/alliancelionmount/alliancelion 1
+    400004: creature/alliancelionmount/alliancelion_bone_0
+    400006: creature/alliancelionmount/alliancelion_bone_1
+    400008: creature/alliancelionmount/alliancelion_bone_10
+    400010: creature/alliancelionmount/alliancelion_bone_11
+    400012: creature/alliancelionmount/alliancelion_bone_12
+    400014: creature/alliancelionmount/alliancelion_bone_13
+    400016: creature/alliancelionmount/alliancelion_bone_14
+    400018: creature/alliancelionmount/alliancelion_bone_15
+    400020: creature/alliancelionmount/alliancelion_bone_16
+    400022: creature/alliancelionmount/alliancelion_bone_17
+    400024: creature/alliancelionmount/alliancelion_bone_18
+    400026: creature/alliancelionmount/alliancelion_bone_19
+    400028: creature/alliancelionmount/alliancelion_bone_2
+    400030: creature/alliancelionmount/alliancelion_bone_20
+    400032: creature/alliancelionmount/alliancelion_bone_21
+    400034: creature/alliancelionmount/alliancelion_bone_22
+    400036: creature/alliancelionmount/alliancelion_bone_23
+    400038: creature/alliancelionmount/alliancelion_bone_24
+    400040: creature/alliancelionmount/alliancelion_bone_25
+    400042: creature/alliancelionmount/alliancelion_bone_26
+    400044: creature/alliancelionmount/alliancelion_bone_27
+    400046: creature/alliancelionmount/alliancelion_bone_28
+    400048: creature/alliancelionmount/alliancelion_bone_29
+    400050: creature/alliancelionmount/alliancelion_bone_3
+    400052: creature/alliancelionmount/alliancelion_bone_30
+    400054: creature/alliancelionmount/alliancelion_bone_31
+    400056: creature/alliancelionmount/alliancelion_bone_32
+    400058: creature/alliancelionmount/alliancelion_bone_33
+    400060: creature/alliancelionmount/alliancelion_bone_34
+    400062: creature/alliancelionmount/alliancelion_bone_4
+    400064: creature/alliancelionmount/alliancelion_bone_5
+    400066: creature/alliancelionmount/alliancelion_bone_54
+    400068: creature/alliancelionmount/alliancelion_bone_6
+    400070: creature/alliancelionmount/alliancelion_bone_7
+    400072: creature/alliancelionmount/alliancelion_bone_8
+    400074: creature/alliancelionmount/alliancelion_bone_9
+    400076: //RootNode
+    4300000: creature/alliancelionmount/alliancelion
+    7400000: Stand [0]
+    7400002: Walk [1]
+    7400004: Run [2]
+    7400006: AttackUnarmed [4]
+    7400008: DruidCatRip [3]
+    7400010: AttackUnarmed [6]
+    7400012: DruidCatClaw [5]
+    7400014: CombatCritical [7]
+    7400016: Death [8]
+    7400018: CombatWound [10]
+    7400020: StandWound [9]
+    7400022: Stand [12]
+    7400024: DruidCatCower [11]
+    7400026: Stand [13]
+    7400028: ShuffleRight [14]
+    7400030: ShuffleLeft [15]
+    7400032: SitGround [16]
+    7400034: SitGroundDown [17]
+    7400036: SitGroundUp [18]
+    7400038: Sleep [19]
+    7400040: SleepDown [20]
+    7400042: SleepUp [21]
+    7400044: Swim [22]
+    7400046: SwimIdle [23]
+    7400048: JumpStart [24]
+    7400050: JumpEnd [25]
+    7400052: Jump [26]
+    7400054: Fall [27]
+    7400056: SpecialUnarmed [29]
+    7400058: DruidCatRavage [28]
+    7400060: SpecialUnarmed [31]
+    7400062: DruidCatRake [30]
+    7400064: SwimBackwards [32]
+    7400066: SwimLeft [33]
+    7400068: SwimRight [34]
+    7400070: Walkbackwards [35]
+    7400072: DruidCatPounce [36]
+    7400074: MountSpecial [37]
+    9500000: //RootNode
+    13700000: creature/alliancelionmount/alliancelion
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
