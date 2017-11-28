@@ -9,9 +9,7 @@ public class AstralBehaviour : GenericBehaviour
 	public float speedDampTime = 0.1f;              // Default damp time to change the animations based on current speed.
 	
 	private float speed, speedSeeker;               // Moving speed.
-	private int jumpBool;                           // Animator variable related to jumping.
-	private int groundedBool;                       // Animator variable related to whether or not the player is on ground.
-	private bool jump;                              // Boolean to determine whether or not the player started a jump.
+	
 	private bool isColliding;
 
 	private bool isWalking;
@@ -44,7 +42,8 @@ public class AstralBehaviour : GenericBehaviour
 	}
 	void Posess(GameObject posessTarget){
 		posessTarget.GetComponent<MoveBehaviour>().enabled=true;
-		
+		behaviourManager.GetCamScript.player=posessTarget.transform;
+		Destroy(gameObject);
 
 	}
 
@@ -113,5 +112,11 @@ public class AstralBehaviour : GenericBehaviour
 	private void OnCollisionExit(Collision collision)
 	{
 		isColliding = false;
+	}
+	private void OnCollisionEnter(Collision other){
+		if(other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<MoveBehaviour>().isSleeping == true){
+			Posess(other.gameObject);
+		}
+		
 	}
 }

@@ -9,9 +9,12 @@ public class MoveBehaviour : GenericBehaviour
 	public float speedDampTime = 0.1f;              // Default damp time to change the animations based on current speed.
 	public string jumpButton = "Jump";              // Default jump button.
 	public float jumpHeight = 1.5f;                 // Default jump height.
-	public float jumpIntertialForce = 0.25f;          // Default horizontal inertial force when jumping.
+	public float jumpIntertialForce = 0.25f; // Default horizontal inertial force when jumping.
+
+	public bool isSleeping = false;         	
 	public GameObject astralPrefab;
 	public GameObject playGameContainer;
+
 	private float speed, speedSeeker;               // Moving speed.
 	private int jumpBool;                           // Animator variable related to jumping.
 	private int groundedBool;                       // Animator variable related to whether or not the player is on ground.
@@ -20,7 +23,7 @@ public class MoveBehaviour : GenericBehaviour
 
 	private bool isWalking;
 	private bool canSleep = true;
-	public bool isSleeping = false;
+	
 
 	// Start is always called after any Awake functions.
 	void Start() 

@@ -46,13 +46,14 @@ public class BasicBehaviour : MonoBehaviour
 
 	void Awake ()
 	{
+		
 		// Set up the references.
 		behaviours = new List<GenericBehaviour> ();
 		overridingBehaviours = new List<GenericBehaviour>();
 		anim = GetComponent<Animator> ();
 		hFloat = Animator.StringToHash("H");
 		vFloat = Animator.StringToHash("V");
-		camScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic> ();
+		
 		rBody = GetComponent<Rigidbody> ();
 
 		// Grounded verification variables.
@@ -62,7 +63,7 @@ public class BasicBehaviour : MonoBehaviour
 
 	void Update()
 	{
-		
+		camScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic> ();
 		// Store the input axes.
 		h = Input.GetAxis("Horizontal");
 		v = Input.GetAxis("Vertical");
