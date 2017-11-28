@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 54589135163090246}
   - component: {fileID: 136017273137152756}
   - component: {fileID: 114997955676886516}
-  - component: {fileID: 114246700692143340}
+  - component: {fileID: 114467487712930780}
   m_Layer: 0
   m_Name: AstralPlayer
   m_TagString: Untagged
@@ -977,7 +977,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114246700692143340
+--- !u!114 &114467487712930780
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

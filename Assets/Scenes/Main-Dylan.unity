@@ -108,6 +108,33 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &20879890 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1620668675255456, guid: ea7aaea72886e3a43b552ced5376c32a,
+    type: 2}
+  m_PrefabInternal: {fileID: 154893439}
+--- !u!114 &20879891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 20879890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04cfe015b44cfc4fb97244a8ce150c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 0.15
+  runSpeed: 50
+  sprintSpeed: 2
+  speedDampTime: 0.1
+  jumpButton: Jump
+  jumpHeight: 1.5
+  jumpIntertialForce: 0.25
+  isSleeping: 1
+  astralPrefab: {fileID: 1607313069891068, guid: cfb407e1b1419924b9f23de5753eb8f0,
+    type: 2}
+  playGameContainer: {fileID: 2097877556}
 --- !u!1001 &154893439
 Prefab:
   m_ObjectHideFlags: 0
@@ -121,7 +148,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4027909295231042, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.278
       objectReference: {fileID: 0}
     - target: {fileID: 4027909295231042, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -157,9 +184,18 @@ Prefab:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1348825401}
+    - target: {fileID: 1620668675255456, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620668675255456, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114415371561864698, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
     - {fileID: 114886805181747524, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
+    - {fileID: 114562643213391760, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &508020140
@@ -263,8 +299,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9480991, y: 0.5838012, z: 0.86177635}
-  m_Center: {x: 0.47404957, y: -0.2080994, z: 0.069111824}
+  m_Size: {x: 1.9480991, y: 0.6748864, z: 0.86177635}
+  m_Center: {x: 0.47404957, y: -0.253642, z: 0.069111824}
 --- !u!114 &573818814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +319,7 @@ MonoBehaviour:
   jumpButton: Jump
   jumpHeight: 1.5
   jumpIntertialForce: 0.25
-  isSleeping: 1
+  isSleeping: 0
   astralPrefab: {fileID: 1607313069891068, guid: cfb407e1b1419924b9f23de5753eb8f0,
     type: 2}
   playGameContainer: {fileID: 2097877556}

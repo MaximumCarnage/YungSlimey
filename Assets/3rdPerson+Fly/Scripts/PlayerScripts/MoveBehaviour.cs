@@ -11,7 +11,7 @@ public class MoveBehaviour : GenericBehaviour
 	public float jumpHeight = 1.5f;                 // Default jump height.
 	public float jumpIntertialForce = 0.25f; // Default horizontal inertial force when jumping.
 
-	public bool isSleeping = false;         	
+	public bool isSleeping = true;         	
 	public GameObject astralPrefab;
 	public GameObject playGameContainer;
 
@@ -42,12 +42,10 @@ public class MoveBehaviour : GenericBehaviour
 	// Update is used to set features regardless the active behaviour.
 	void Update ()
 	{
-		if(isSleeping == true){
-			behaviourManager.GetAnim.SetBool("Asleep",true);
+		if(isSleeping){
+			Debug.Log(isSleeping);
 		}
-		else{
-			behaviourManager.GetAnim.SetBool("Asleep",false);
-		}
+		
 		// Get jump input.
 		if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
 		{
@@ -58,6 +56,7 @@ public class MoveBehaviour : GenericBehaviour
 	// LocalFixedUpdate overrides the virtual function of the base class.
 	public override void LocalFixedUpdate()
 	{
+		
 		// Call the basic movement manager.
 		MovementManagement(behaviourManager.GetH, behaviourManager.GetV);
 
@@ -71,9 +70,9 @@ public class MoveBehaviour : GenericBehaviour
 	}
 	void SleepManagement(){
 		if(Input.GetKeyDown(KeyCode.O) && canSleep && speed<=0){
-			isSleeping = true;
+			behaviourManager.GetAnim.SetBool("Asleep",true);
 			this.enabled = false;
-			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position, Quaternion.identity);
+			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position+new Vector3(0.5f,0,0.5f), Quaternion.identity);
 			tempastral.transform.parent = playGameContainer.transform;
 			tempastral.name = "AstralPlayer";
 			tempastral.GetComponent<BasicBehaviour>().playerCamera = behaviourManager.playerCamera;	

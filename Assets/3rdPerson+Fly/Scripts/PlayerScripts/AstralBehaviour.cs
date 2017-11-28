@@ -41,6 +41,7 @@ public class AstralBehaviour : GenericBehaviour
 	
 	}
 	void Posess(GameObject posessTarget){
+		
 		posessTarget.GetComponent<MoveBehaviour>().enabled=true;
 		behaviourManager.GetCamScript.player=posessTarget.transform;
 		posessTarget.GetComponent<MoveBehaviour>().isSleeping = false;
