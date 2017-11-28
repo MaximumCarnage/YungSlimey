@@ -309,8 +309,8 @@ GameObject:
   - component: {fileID: 95661238254619646}
   - component: {fileID: 54589135163090246}
   - component: {fileID: 136017273137152756}
-  - component: {fileID: 114665075193119684}
-  - component: {fileID: 114358038527163126}
+  - component: {fileID: 114276226565161390}
+  - component: {fileID: 114870677308843434}
   m_Layer: 0
   m_Name: AstralPlayer
   m_TagString: Untagged
@@ -969,7 +969,7 @@ Animator:
   m_GameObject: {fileID: 1607313069891068}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: af129db83f3f99a4d93f2b135206eba3, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1ac2a1891f6a2814dbcb83cbd24d5ee1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0377f973b8b59424e9e614b84cb5393b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -977,7 +977,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114358038527163126
+--- !u!114 &114276226565161390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1607313069891068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d91044bddee1594cb64cddcbb5e76b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  turnSmoothing: 0.06
+  sprintFOV: 100
+  sprintButton: Sprint
+--- !u!114 &114870677308843434
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -995,21 +1010,8 @@ MonoBehaviour:
   jumpButton: Jump
   jumpHeight: 1.5
   jumpIntertialForce: 0.25
---- !u!114 &114665075193119684
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1607313069891068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d91044bddee1594cb64cddcbb5e76b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
-  turnSmoothing: 0.06
-  sprintFOV: 100
-  sprintButton: Sprint
+  astralPrefab: {fileID: 0}
+  isSleeping: 0
 --- !u!136 &136017273137152756
 CapsuleCollider:
   m_ObjectHideFlags: 1
