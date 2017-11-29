@@ -42,10 +42,11 @@ public class MoveBehaviour : GenericBehaviour
 	// Update is used to set features regardless the active behaviour.
 	void Update ()
 	{
-		if(isSleeping){
-			Debug.Log(isSleeping);
-		}
 		
+		if(isSleeping == true){
+			Debug.Log("We Get Here");
+			
+		}
 		// Get jump input.
 		if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
 		{
@@ -77,10 +78,18 @@ public class MoveBehaviour : GenericBehaviour
 		// 	this.enabled=true;
 		// }
 	}
+	public void FallAsleep(){
+		isSleeping=true;
+		behaviourManager.GetAnim.SetBool("Asleep",true);
+	}
+	public void WakeUp(){
+		isSleeping=false;
+		behaviourManager.GetAnim.SetBool("Asleep",false);
+	}
 	void SleepManagement(){
+		
 		if(Input.GetKeyDown(KeyCode.O) && canSleep && speed<=0){
-			isSleeping=true;
-			behaviourManager.GetAnim.SetBool("Asleep",true);
+			FallAsleep();
 			this.enabled = false;
 			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position+new Vector3(0.5f,0,0.5f), Quaternion.identity);
 			tempastral.transform.parent = playGameContainer.transform;

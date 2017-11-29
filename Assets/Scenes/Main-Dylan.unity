@@ -205,7 +205,7 @@ Prefab:
       objectReference: {fileID: 1348825401}
     - target: {fileID: 1620668675255456, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
       propertyPath: m_TagString
-      value: Player
+      value: PlayerBody
       objectReference: {fileID: 0}
     - target: {fileID: 1620668675255456, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
       propertyPath: m_IsActive
@@ -220,6 +220,31 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65536482334465888, guid: ea7aaea72886e3a43b552ced5376c32a,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.10393241
+      objectReference: {fileID: 0}
+    - target: {fileID: 65536482334465888, guid: ea7aaea72886e3a43b552ced5376c32a,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.009146182
+      objectReference: {fileID: 0}
+    - target: {fileID: 65536482334465888, guid: ea7aaea72886e3a43b552ced5376c32a,
+        type: 2}
+      propertyPath: m_Center.x
+      value: -0.0001986593
+      objectReference: {fileID: 0}
+    - target: {fileID: 65536482334465888, guid: ea7aaea72886e3a43b552ced5376c32a,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0.046137184
+      objectReference: {fileID: 0}
+    - target: {fileID: 65536482334465888, guid: ea7aaea72886e3a43b552ced5376c32a,
+        type: 2}
+      propertyPath: m_Center.z
+      value: -0.00007905811
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114415371561864698, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
@@ -237,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 232660753}
   - component: {fileID: 232660754}
+  - component: {fileID: 232660755}
   m_Layer: 0
   m_Name: Paw
   m_TagString: Untagged
@@ -267,10 +293,21 @@ BoxCollider:
   m_GameObject: {fileID: 232660752}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.19040725, y: 0.11322522, z: 0.1436601}
   m_Center: {x: 0.058717933, y: -0.023834132, z: -0.0090735555}
+--- !u!114 &232660755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 232660752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd5eb82808861e42a9a672c86cc3e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &508020140
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,8 +409,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2859001, y: 0.5086109, z: 0.43135214}
-  m_Center: {x: 0.3526106, y: -0.33677974, z: 0.027799845}
+  m_Size: {x: 1.4384336, y: 0.5086109, z: 0.70445347}
+  m_Center: {x: 0.27634382, y: -0.33677974, z: -0.018260956}
 --- !u!95 &573818813 stripped
 Animator:
   m_PrefabParentObject: {fileID: 95766057953527490, guid: 321e11e70d972af4db7b02ecab9661ae,
@@ -397,7 +434,7 @@ MonoBehaviour:
   jumpButton: Jump
   jumpHeight: 1.5
   jumpIntertialForce: 0.25
-  isSleeping: 1
+  isSleeping: 0
   astralPrefab: {fileID: 1607313069891068, guid: cfb407e1b1419924b9f23de5753eb8f0,
     type: 2}
   playGameContainer: {fileID: 2097877556}

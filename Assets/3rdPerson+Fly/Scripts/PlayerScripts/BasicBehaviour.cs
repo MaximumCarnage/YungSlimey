@@ -63,6 +63,7 @@ public class BasicBehaviour : MonoBehaviour
 
 	void Update()
 	{
+		
 		camScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic> ();
 		// Store the input axes.
 		h = Input.GetAxis("Horizontal");
@@ -93,6 +94,7 @@ public class BasicBehaviour : MonoBehaviour
 	// Call the FixedUpdate functions of the active or overriding behaviours.
 	void FixedUpdate()
 	{
+		GetAnim.SetBool("Damaged",false);
 		// Call the active behaviour if no other is overriding.
 		bool isAnyBehaviourActive = false;
 		if (behaviourLocked > 0 || overridingBehaviours.Count == 0)

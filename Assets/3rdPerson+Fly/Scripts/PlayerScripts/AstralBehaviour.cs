@@ -44,7 +44,8 @@ public class AstralBehaviour : GenericBehaviour
 		
 		posessTarget.GetComponent<MoveBehaviour>().enabled=true;
 		behaviourManager.GetCamScript.player=posessTarget.transform;
-		posessTarget.GetComponent<MoveBehaviour>().isSleeping = false;
+		posessTarget.GetComponent<MoveBehaviour>().WakeUp();
+		posessTarget.GetComponent<Health>().m_health=100;
 		Destroy(gameObject);
 
 	}
@@ -116,7 +117,7 @@ public class AstralBehaviour : GenericBehaviour
 		isColliding = false;
 	}
 	private void OnCollisionEnter(Collision other){
-		if(other.gameObject.tag == "Enemy" && other.gameObject.GetComponent<MoveBehaviour>().isSleeping == true){
+		if((other.gameObject.tag == "Enemy" || other.gameObject.tag == "PlayerBody") && other.gameObject.GetComponent<MoveBehaviour>().isSleeping == true){
 			Posess(other.gameObject);
 		}
 		
