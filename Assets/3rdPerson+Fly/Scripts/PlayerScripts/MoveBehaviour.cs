@@ -51,6 +51,12 @@ public class MoveBehaviour : GenericBehaviour
 		{
 			jump = true;
 		}
+		if(Input.GetMouseButtonDown(0)){
+			behaviourManager.GetAnim.SetBool("Attacking",true);
+		}
+		else if(Input.GetMouseButtonUp(0)){
+			behaviourManager.GetAnim.SetBool("Attacking",false);
+		}
 	}
 
 	// LocalFixedUpdate overrides the virtual function of the base class.
@@ -63,6 +69,7 @@ public class MoveBehaviour : GenericBehaviour
 		// Call the jump manager.
 		JumpManagement();
 		SleepManagement();
+		AttackManagement();
 		// if(!isSleeping){
 		// 	behaviourManager.GetAnim.SetBool("Asleep",false);
 		// 	this.enabled=true;
@@ -126,7 +133,15 @@ public class MoveBehaviour : GenericBehaviour
 			}
 		}
 	}
-
+	void AttackManagement(){
+		// if(Input.GetMouseButtonDown(0)){
+		// 	behaviourManager.GetAnim.SetBool("Attacking",true);
+		// }
+		// else if(Input.GetMouseButtonUp(0)){
+		// 	behaviourManager.GetAnim.SetBool("Attacking",false);
+		// }
+		
+	}
 	// Deal with the basic player movement
 	void MovementManagement(float horizontal, float vertical)
 	{
@@ -139,7 +154,9 @@ public class MoveBehaviour : GenericBehaviour
 
 		// Set proper speed.
 		Vector2 dir = new Vector2(horizontal, vertical);
+		
 		speed = Vector2.ClampMagnitude(dir, 1f).magnitude;
+		
 		// This is for PC only, gamepads control speed via analog stick.
 		speedSeeker += Input.GetAxis("Mouse ScrollWheel");
 		speedSeeker = Mathf.Clamp(speedSeeker, walkSpeed, runSpeed);
@@ -164,8 +181,10 @@ public class MoveBehaviour : GenericBehaviour
 
 		// Calculate target direction based on camera forward and direction key.
 		Vector3 right = new Vector3(forward.z, 0, -forward.x);
+		
 		Vector3 targetDirection;
 		targetDirection = forward * vertical + right * horizontal;
+			
 
 		// Lerp current direction to calculated target direction.
 		if((behaviourManager.IsMoving() && targetDirection != Vector3.zero))
@@ -184,7 +203,7 @@ public class MoveBehaviour : GenericBehaviour
 
 		return targetDirection;
 	}
-
+	
 	// Collision detection.
 	private void OnCollisionStay(Collision collision)
 	{

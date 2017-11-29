@@ -131,7 +131,7 @@ MonoBehaviour:
   jumpButton: Jump
   jumpHeight: 1.5
   jumpIntertialForce: 0.25
-  isSleeping: 1
+  isSleeping: 0
   astralPrefab: {fileID: 1607313069891068, guid: cfb407e1b1419924b9f23de5753eb8f0,
     type: 2}
   playGameContainer: {fileID: 2097877556}
@@ -281,7 +281,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573818810}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 30
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573818810}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b04cfe015b44cfc4fb97244a8ce150c0, type: 3}
   m_Name: 
@@ -319,10 +319,9 @@ MonoBehaviour:
   jumpButton: Jump
   jumpHeight: 1.5
   jumpIntertialForce: 0.25
-  isSleeping: 0
-  astralPrefab: {fileID: 1607313069891068, guid: cfb407e1b1419924b9f23de5753eb8f0,
-    type: 2}
-  playGameContainer: {fileID: 2097877556}
+  isSleeping: 1
+  astralPrefab: {fileID: 0}
+  playGameContainer: {fileID: 0}
 --- !u!114 &573818815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,7 +453,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.14999998
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
       propertyPath: m_LocalPosition.z
@@ -513,6 +512,22 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5e9d8aa6f8102664d8cbb0dd3778bb24, type: 2}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607334348706034, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 65681342573133614, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
