@@ -9,8 +9,12 @@ public class MoveBehaviour : GenericBehaviour
 	public float speedDampTime = 0.1f;              // Default damp time to change the animations based on current speed.
 	public string jumpButton = "Jump";              // Default jump button.
 	public float jumpHeight = 1.5f;                 // Default jump height.
-	public float jumpIntertialForce = 0.25f;          // Default horizontal inertial force when jumping.
+	public float jumpIntertialForce = 0.25f; // Default horizontal inertial force when jumping.
+
+	public bool isSleeping = true;         	
 	public GameObject astralPrefab;
+	public GameObject playGameContainer;
+
 	private float speed, speedSeeker;               // Moving speed.
 	private int jumpBool;                           // Animator variable related to jumping.
 	private int groundedBool;                       // Animator variable related to whether or not the player is on ground.
@@ -19,7 +23,7 @@ public class MoveBehaviour : GenericBehaviour
 
 	private bool isWalking;
 	private bool canSleep = true;
-	public bool isSleeping = false;
+	
 
 	// Start is always called after any Awake functions.
 	void Start() 
@@ -38,22 +42,34 @@ public class MoveBehaviour : GenericBehaviour
 	// Update is used to set features regardless the active behaviour.
 	void Update ()
 	{
+		if(isSleeping){
+			Debug.Log(isSleeping);
+		}
+		
 		// Get jump input.
 		if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
 		{
 			jump = true;
+		}
+		if(Input.GetMouseButtonDown(0)){
+			behaviourManager.GetAnim.SetBool("Attacking",true);
+		}
+		else if(Input.GetMouseButtonUp(0)){
+			behaviourManager.GetAnim.SetBool("Attacking",false);
 		}
 	}
 
 	// LocalFixedUpdate overrides the virtual function of the base class.
 	public override void LocalFixedUpdate()
 	{
+		
 		// Call the basic movement manager.
 		MovementManagement(behaviourManager.GetH, behaviourManager.GetV);
 
 		// Call the jump manager.
 		JumpManagement();
 		SleepManagement();
+		AttackManagement();
 		// if(!isSleeping){
 		// 	behaviourManager.GetAnim.SetBool("Asleep",false);
 		// 	this.enabled=true;
@@ -63,7 +79,13 @@ public class MoveBehaviour : GenericBehaviour
 		if(Input.GetKeyDown(KeyCode.O) && canSleep && speed<=0){
 			behaviourManager.GetAnim.SetBool("Asleep",true);
 			this.enabled = false;
-			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position, Quaternion.identity);
+			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position+new Vector3(0.5f,0,0.5f), Quaternion.identity);
+			tempastral.transform.parent = playGameContainer.transform;
+			tempastral.name = "AstralPlayer";
+			tempastral.GetComponent<BasicBehaviour>().playerCamera = behaviourManager.playerCamera;	
+			Debug.Log(behaviourManager.playerCamera.name);
+			//tempastral.GetComponent<BasicBehaviour>().playerCamera 
+			
 			behaviourManager.GetCamScript.player=tempastral.transform;
 			
 		}
@@ -81,8 +103,8 @@ public class MoveBehaviour : GenericBehaviour
 			if(behaviourManager.GetAnim.GetFloat(speedFloat) > 0.1)
 			{
 				// Temporarily change player friction to pass through obstacles.
-				GetComponent<CapsuleCollider>().material.dynamicFriction = 0f;
-				GetComponent<CapsuleCollider>().material.staticFriction = 0f;
+				GetComponent<Collider>().material.dynamicFriction = 0f;
+				GetComponent<Collider>().material.staticFriction = 0f;
 				// Set jump vertical impulse velocity.
 				float velocity = 2f * Mathf.Abs(Physics.gravity.y) * jumpHeight;
 				velocity = Mathf.Sqrt(velocity);
@@ -102,8 +124,8 @@ public class MoveBehaviour : GenericBehaviour
 			{
 				behaviourManager.GetAnim.SetBool(groundedBool, true);
 				// Change back player friction to default.
-				GetComponent<CapsuleCollider>().material.dynamicFriction = 0.6f;
-				GetComponent<CapsuleCollider>().material.staticFriction = 0.6f;
+				GetComponent<Collider>().material.dynamicFriction = 0.6f;
+				GetComponent<Collider>().material.staticFriction = 0.6f;
 				// Set jump related parameters.
 				jump = false;
 				behaviourManager.GetAnim.SetBool(jumpBool, false);
@@ -111,7 +133,15 @@ public class MoveBehaviour : GenericBehaviour
 			}
 		}
 	}
-
+	void AttackManagement(){
+		// if(Input.GetMouseButtonDown(0)){
+		// 	behaviourManager.GetAnim.SetBool("Attacking",true);
+		// }
+		// else if(Input.GetMouseButtonUp(0)){
+		// 	behaviourManager.GetAnim.SetBool("Attacking",false);
+		// }
+		
+	}
 	// Deal with the basic player movement
 	void MovementManagement(float horizontal, float vertical)
 	{
@@ -124,7 +154,9 @@ public class MoveBehaviour : GenericBehaviour
 
 		// Set proper speed.
 		Vector2 dir = new Vector2(horizontal, vertical);
+		
 		speed = Vector2.ClampMagnitude(dir, 1f).magnitude;
+		
 		// This is for PC only, gamepads control speed via analog stick.
 		speedSeeker += Input.GetAxis("Mouse ScrollWheel");
 		speedSeeker = Mathf.Clamp(speedSeeker, walkSpeed, runSpeed);
@@ -149,8 +181,10 @@ public class MoveBehaviour : GenericBehaviour
 
 		// Calculate target direction based on camera forward and direction key.
 		Vector3 right = new Vector3(forward.z, 0, -forward.x);
+		
 		Vector3 targetDirection;
 		targetDirection = forward * vertical + right * horizontal;
+			
 
 		// Lerp current direction to calculated target direction.
 		if((behaviourManager.IsMoving() && targetDirection != Vector3.zero))
@@ -169,7 +203,7 @@ public class MoveBehaviour : GenericBehaviour
 
 		return targetDirection;
 	}
-
+	
 	// Collision detection.
 	private void OnCollisionStay(Collision collision)
 	{

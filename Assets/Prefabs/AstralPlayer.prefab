@@ -309,8 +309,8 @@ GameObject:
   - component: {fileID: 95661238254619646}
   - component: {fileID: 54589135163090246}
   - component: {fileID: 136017273137152756}
-  - component: {fileID: 114276226565161390}
-  - component: {fileID: 114870677308843434}
+  - component: {fileID: 114997955676886516}
+  - component: {fileID: 114467487712930780}
   m_Layer: 0
   m_Name: AstralPlayer
   m_TagString: Untagged
@@ -977,7 +977,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114276226565161390
+--- !u!114 &114467487712930780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1607313069891068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a40e8b9aa832e4eb60d594bc025687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 0.15
+  runSpeed: 50
+  sprintSpeed: 2
+  speedDampTime: 0.1
+--- !u!114 &114997955676886516
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -992,26 +1007,6 @@ MonoBehaviour:
   turnSmoothing: 0.06
   sprintFOV: 100
   sprintButton: Sprint
---- !u!114 &114870677308843434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1607313069891068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04cfe015b44cfc4fb97244a8ce150c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 0.15
-  runSpeed: 50
-  sprintSpeed: 2
-  speedDampTime: 0.1
-  jumpButton: Jump
-  jumpHeight: 1.5
-  jumpIntertialForce: 0.25
-  astralPrefab: {fileID: 0}
-  isSleeping: 0
 --- !u!136 &136017273137152756
 CapsuleCollider:
   m_ObjectHideFlags: 1
