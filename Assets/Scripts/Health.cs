@@ -13,9 +13,14 @@ public class Health : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Debug.Log(m_health);
+		if(m_health == 0){
+			
+		}
 	}
 	public void takeDamage(int damage){
 		m_health -= damage;
+		m_anim.SetBool("Damaged",true);
+		
 	}
 
 }

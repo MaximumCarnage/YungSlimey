@@ -6,7 +6,9 @@ public class SwordStrike : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if(other.gameObject.tag == "Enemy"){
-			other.gameObject.GetComponent<Health>();
+			Debug.Log("WeGetHere");
+			other.gameObject.GetComponent<Health>().takeDamage(10);
+			
 		}
 	}
 }

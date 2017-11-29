@@ -14,7 +14,7 @@ public class MoveBehaviour : GenericBehaviour
 	public bool isSleeping = true;         	
 	public GameObject astralPrefab;
 	public GameObject playGameContainer;
-
+	public GameObject Weapon;
 	private float speed, speedSeeker;               // Moving speed.
 	private int jumpBool;                           // Animator variable related to jumping.
 	private int groundedBool;                       // Animator variable related to whether or not the player is on ground.
@@ -53,9 +53,11 @@ public class MoveBehaviour : GenericBehaviour
 		}
 		if(Input.GetMouseButtonDown(0)){
 			behaviourManager.GetAnim.SetBool("Attacking",true);
+			Weapon.GetComponent<Collider>().enabled = true;
 		}
 		else if(Input.GetMouseButtonUp(0)){
 			behaviourManager.GetAnim.SetBool("Attacking",false);
+			Weapon.GetComponent<Collider>().enabled = false;
 		}
 	}
 
@@ -77,6 +79,7 @@ public class MoveBehaviour : GenericBehaviour
 	}
 	void SleepManagement(){
 		if(Input.GetKeyDown(KeyCode.O) && canSleep && speed<=0){
+			isSleeping=true;
 			behaviourManager.GetAnim.SetBool("Asleep",true);
 			this.enabled = false;
 			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position+new Vector3(0.5f,0,0.5f), Quaternion.identity);
