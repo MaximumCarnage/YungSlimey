@@ -37,10 +37,7 @@ public class RPGCharacterController : MonoBehaviour {
 		m_animationController = GetComponent<Animator>();
 		
 	}
-	void FixedUpdate()
-	{
-		m_animationController.SetBool("Damaged",false);
-	}
+
 	void Update(){
 		
 		m_moveStatus = "idle";
