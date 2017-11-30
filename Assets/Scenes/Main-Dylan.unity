@@ -96,8 +96,8 @@ NavMeshSettings:
     serializedVersion: 2
     agentTypeID: 0
     agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
+    agentHeight: 4
+    agentSlope: 3.2
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -107,7 +107,7 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: bce66d3495f08d4458495f1a5d2078bd, type: 2}
 --- !u!1001 &137389996
 Prefab:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4027909295231042, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 4027909295231042, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -125,7 +125,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4027909295231042, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 36.1
       objectReference: {fileID: 0}
     - target: {fileID: 4027909295231042, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -300,7 +300,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 508020140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -403,6 +403,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: 100
   m_anim: {fileID: 573818813}
+--- !u!114 &573818818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573818810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbb8f8900ed0194a8de19b3225acd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: {fileID: 162841418}
+--- !u!195 &573818819
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573818810}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.3
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &817257763
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,15 +543,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.608497
+      value: 21.7
       objectReference: {fileID: 0}
     - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.97
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6.6809998
+      value: 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
       propertyPath: m_LocalRotation.x
