@@ -308,9 +308,9 @@ GameObject:
   - component: {fileID: 4760266212662596}
   - component: {fileID: 95661238254619646}
   - component: {fileID: 54589135163090246}
-  - component: {fileID: 136017273137152756}
-  - component: {fileID: 114997955676886516}
-  - component: {fileID: 114467487712930780}
+  - component: {fileID: 143075361207354044}
+  - component: {fileID: 114984029137542476}
+  - component: {fileID: 136926526312359838}
   m_Layer: 0
   m_Name: AstralPlayer
   m_TagString: Untagged
@@ -827,7 +827,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1607313069891068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.841, y: -0.428, z: -0.1559999}
+  m_LocalPosition: {x: 0.5557746, y: 0, z: 1.5767242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4985596437276766}
@@ -977,7 +977,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114467487712930780
+--- !u!114 &114984029137542476
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -985,29 +985,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607313069891068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a40e8b9aa832e4eb60d594bc025687, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bea1ea01ae8a6547ab48ee181fc1641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0.15
-  runSpeed: 50
-  sprintSpeed: 2
-  speedDampTime: 0.1
---- !u!114 &114997955676886516
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1607313069891068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d91044bddee1594cb64cddcbb5e76b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_moveStatus: idle
+  m_walkByDefault: 1
+  m_gravity: 20
   playerCamera: {fileID: 0}
-  turnSmoothing: 0.06
-  sprintFOV: 100
-  sprintButton: Sprint
---- !u!136 &136017273137152756
+  m_jumpSpeed: 8
+  m_runSpeed: 10
+  m_walkSpeed: 4
+  m_turnSpeed: 250
+  m_moveBackwardsMultiplier: 0.75
+--- !u!136 &136926526312359838
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1016,10 +1006,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.26365593
+  m_Radius: 0.2636559
   m_Height: 0.9584979
   m_Direction: 1
-  m_Center: {x: 0.006998211, y: 0.46238333, z: 0.022319347}
+  m_Center: {x: 0.01, y: 0.6, z: 0.02}
 --- !u!137 &137527306121004540
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1142,3 +1132,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.018321753, y: -0.000000014901161, z: 0.29946873}
     m_Extent: {x: 0.2885003, y: 0.2797804, z: 0.48928216}
   m_DirtyAABB: 0
+--- !u!143 &143075361207354044
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1607313069891068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.9584979
+  m_Radius: 0.2636559
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0.01, y: 0.6, z: 0.02}

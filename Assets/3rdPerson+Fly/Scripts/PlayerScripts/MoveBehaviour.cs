@@ -43,10 +43,8 @@ public class MoveBehaviour : GenericBehaviour
 	void Update ()
 	{
 		
-		if(isSleeping == true){
-			Debug.Log("We Get Here");
-			
-		}
+		
+		
 		// Get jump input.
 		if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
 		{

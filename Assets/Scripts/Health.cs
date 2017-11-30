@@ -9,6 +9,10 @@ public class Health : MonoBehaviour {
 	void Start () {
 		m_anim=gameObject.GetComponent<Animator>();
 	}
+		void FixedUpdate()
+	{
+		m_anim.SetBool("Damaged",false);
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -18,7 +22,7 @@ public class Health : MonoBehaviour {
 	public void takeDamage(int damage){
 		
 		if(m_health-damage <= 0){
-			gameObject.GetComponent<MoveBehaviour>().FallAsleep();
+			gameObject.GetComponent<RPGCharacterController>().FallAsleep();
 		}
 		else{
 			m_health -= damage;
