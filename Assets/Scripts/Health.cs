@@ -22,7 +22,7 @@ public class Health : MonoBehaviour {
 	public void takeDamage(int damage){
 		
 		if(m_health-damage <= 0){
-			gameObject.GetComponent<RPGCharacterController>().FallAsleep();
+			gameObject.GetComponent<AnimalController>().FallAsleep();
 		}
 		else{
 			m_health -= damage;

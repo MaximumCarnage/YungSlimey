@@ -28,14 +28,14 @@ public class RPGCharacterController : MonoBehaviour {
 	private bool m_mouseSideDown;
 	private CharacterController m_controller;
 	private int m_attackState;
-	
+	private Health m_healthscript;
 	public bool isSleeping;
 	private bool canSleep = true;
 	void Awake(){
 
 		m_controller = GetComponent<CharacterController>();
 		m_animationController = GetComponent<Animator>();
-		
+		m_healthscript = GetComponent<Health>();
 	}
 
 	void Update(){
@@ -138,12 +138,21 @@ public class RPGCharacterController : MonoBehaviour {
 		if(m_jumping){
 			m_moveStatus = "jump";
 		}
+		if(Input.GetKeyDown(KeyCode.M)){
+			m_healthscript.takeDamage(10);
+		}
 
 
 
-
-	
-
+		//TO DO: FIX PLAYER TAKING MULTIPLE HITS, REMEMBER ALEXS PROBLEM,HASHPATHS*
+		//TO DO: GIVE ANIMALS A PROPER CONTROLLER
+	 }
+	 void OnTriggerEnter(Collider other){
+		 if(other.gameObject.tag == "EnemyWeapon"){
+			m_healthscript.takeDamage(10);
+			
+			//other.gameObject.GetComponent<SwordStrike>().m_WeaponDamage
+		 }
 	 }
 
 	public void FallAsleep(){
