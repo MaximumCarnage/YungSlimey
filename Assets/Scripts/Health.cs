@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
 	public int m_health = 100;
+	public bool isSleeping;
 	public Animator m_anim;
 	// Use this for initialization
 	void Start () {
@@ -16,18 +17,28 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(m_health);
+		if(m_health == 0){
+			FallAsleep();
+		}
 		
 	}
 	public void takeDamage(int damage){
 		
-		if(m_health-damage <= 0){
+		if(m_health >= 0){
 			//gameObject.GetComponent<AnimalController>().FallAsleep();
-		}
-		else{
+			Debug.Log(gameObject.name+m_health);
 			m_health -= damage;
-		m_anim.SetBool("Damaged",true);
+			m_anim.SetBool("Damaged",true);
+			Debug.Log(m_health);
 		}
+	}
+	public void FallAsleep(){
+		isSleeping = true;
+		m_anim.SetBool("Asleep",true);
+	}
+	public void WakeUp(){
+		isSleeping = false;
+		m_anim.SetBool("Asleep",false);
 	}
 
 }

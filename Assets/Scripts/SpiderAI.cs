@@ -59,5 +59,11 @@ public class SpiderAI : MonoBehaviour {
         return navHit.position;
     }
 	
+
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.tag == "PlayerBody"){
+            gameObject.GetComponent<Health>().takeDamage(100);
+        }
+    }
 	
 }

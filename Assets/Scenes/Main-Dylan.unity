@@ -464,6 +464,16 @@ Prefab:
       propertyPath: wanderRadius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -1015,6 +1025,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114155453050336104, guid: ea7aaea72886e3a43b552ced5376c32a,
+        type: 2}
+      propertyPath: m_WeaponDamage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea7aaea72886e3a43b552ced5376c32a, type: 2}
   m_IsPrefabParent: 0
@@ -1287,6 +1302,16 @@ Prefab:
       propertyPath: wanderRadius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -1865,6 +1890,21 @@ Prefab:
       propertyPath: wanderRadius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
+    - target: {fileID: 114951732225511750, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: isSleeping
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -1996,6 +2036,16 @@ Prefab:
       propertyPath: wanderTimer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -2446,6 +2496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 100
+  isSleeping: 0
   m_anim: {fileID: 573818813}
 --- !u!114 &573818818
 MonoBehaviour:
@@ -2489,6 +2540,11 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &577746632 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 824192626}
 --- !u!1 &594282707
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,6 +3161,62 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 131857ea1581407448fc0c3d94e8e8e6, type: 3}
+--- !u!1001 &824192626
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2097877557}
+    m_Modifications:
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 166.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 12.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 64.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348373312659920, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114043744970659374, guid: 321e11e70d972af4db7b02ecab9661ae,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
+    - target: {fileID: 114043744970659374, guid: 321e11e70d972af4db7b02ecab9661ae,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 1607334348706034, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_Name
+      value: Lion (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &825696923
 Prefab:
   m_ObjectHideFlags: 0
@@ -3300,6 +3412,16 @@ Prefab:
       propertyPath: wanderTimer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -4212,23 +4334,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 65681342573133614, guid: 321e11e70d972af4db7b02ecab9661ae,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Size.z
       value: 0.61297226
       objectReference: {fileID: 0}
-    - target: {fileID: 65681342573133614, guid: 321e11e70d972af4db7b02ecab9661ae,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Center.z
       value: 0.036572456
       objectReference: {fileID: 0}
-    - target: {fileID: 65681342573133614, guid: 321e11e70d972af4db7b02ecab9661ae,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Size.x
       value: 1.5593872
       objectReference: {fileID: 0}
-    - target: {fileID: 65681342573133614, guid: 321e11e70d972af4db7b02ecab9661ae,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Center.x
       value: 0.4435892
       objectReference: {fileID: 0}
@@ -4298,8 +4416,12 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4122866062147332, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 65681342573133614, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 321e11e70d972af4db7b02ecab9661ae, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1047177382
@@ -4521,6 +4643,16 @@ Prefab:
       propertyPath: m_Name
       value: Spiders
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -4733,6 +4865,16 @@ Prefab:
       propertyPath: wanderRadius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -6067,6 +6209,16 @@ Prefab:
       propertyPath: wanderTimer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -6363,6 +6515,16 @@ Prefab:
       propertyPath: m_Name
       value: Spiders
       objectReference: {fileID: 0}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1348825401}
+    - target: {fileID: 114597200196383668, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33,
+        type: 2}
+      propertyPath: playGameContainer
+      value: 
+      objectReference: {fileID: 2097877556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 481ca6bdc5af1ba4eaaf1ddf81166c33, type: 2}
   m_IsPrefabParent: 0
@@ -7575,6 +7737,7 @@ Transform:
   - {fileID: 2015592869}
   - {fileID: 505220672}
   - {fileID: 1740393943}
+  - {fileID: 577746632}
   m_Father: {fileID: 2018439872}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
