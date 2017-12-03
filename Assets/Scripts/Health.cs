@@ -24,15 +24,20 @@ public class Health : MonoBehaviour {
 	}
 	public void takeDamage(int damage){
 		
-		if(m_health >= 0){
+		if(m_health > 0){
 			//gameObject.GetComponent<AnimalController>().FallAsleep();
-			Debug.Log(gameObject.name+m_health);
+			
 			m_health -= damage;
 			m_anim.SetBool("Damaged",true);
-			Debug.Log(m_health);
+			
 		}
+			if(m_health == 0){
+			FallAsleep();
+		}
+
 	}
 	public void FallAsleep(){
+		Debug.Log("We Get here");
 		isSleeping = true;
 		m_anim.SetBool("Asleep",true);
 	}

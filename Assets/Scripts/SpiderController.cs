@@ -9,7 +9,7 @@ public class SpiderController : MonoBehaviour {
 	public GameObject playGameContainer;
 	public GameObject astralPrefab;
 	
-	public Collider m_weaponHitBox;
+	
 	public Transform playerCamera;  
 	//Movement Speeds
 	public float m_jumpSpeed = 8.0f;
@@ -95,14 +95,7 @@ public class SpiderController : MonoBehaviour {
 
 			m_moveDirection = transform.TransformDirection(m_moveDirection);
 		}
-		if(Input.GetMouseButtonDown(0)){
-			m_animationController.SetBool("Attacking",true);
-			m_weaponHitBox.enabled = true;
-		}
-		else if(Input.GetMouseButtonUp(0)){
-			m_animationController.SetBool("Attacking",false);
-			m_weaponHitBox.enabled = false;
-		}
+		
 		if(Input.GetKeyDown(KeyCode.O) && canSleep ){
 			gameObject.GetComponent<Health>().FallAsleep();
 			this.enabled = false;
@@ -135,7 +128,7 @@ public class SpiderController : MonoBehaviour {
 
 
 		//TO DO: FIX PLAYER TAKING MULTIPLE HITS, REMEMBER ALEXS PROBLEM,HASHPATHS*
-		//TO DO: GIVE ANIMALS A PROPER CONTROLLER
+		
 	 }
 	 void OnTriggerEnter(Collider other){
 		 if(other.gameObject.tag == "Enemy"){

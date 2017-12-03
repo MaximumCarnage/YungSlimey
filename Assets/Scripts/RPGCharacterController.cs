@@ -83,7 +83,7 @@ public class RPGCharacterController : MonoBehaviour {
 			}
 
 			m_moveDirection *= m_isWalking ? m_walkSpeed * m_speedMultiplier : m_runSpeed * m_speedMultiplier;
-
+			if(gameObject.name != "Spiders"){
 			if(Input.GetButton("Jump")){
 				m_jumping = true;
 				m_animationController.SetBool("Jump",true);
@@ -91,6 +91,7 @@ public class RPGCharacterController : MonoBehaviour {
 			}
 			else{
 				m_animationController.SetBool("Jump",false);
+			}
 			}
 			if(m_moveDirection.magnitude > 0.05f){
 				m_animationController.SetBool("isWalking",true);
@@ -101,7 +102,7 @@ public class RPGCharacterController : MonoBehaviour {
 			m_animationController.SetFloat("Direction", m_moveDirection.x);
 
 			m_moveDirection = transform.TransformDirection(m_moveDirection);
-		}
+		}if(gameObject.name != "Spiders"){
 		if(Input.GetMouseButtonDown(0)){
 			m_animationController.SetBool("Attacking",true);
 			m_weaponHitBox.enabled = true;
@@ -109,6 +110,7 @@ public class RPGCharacterController : MonoBehaviour {
 		else if(Input.GetMouseButtonUp(0)){
 			m_animationController.SetBool("Attacking",false);
 			m_weaponHitBox.enabled = false;
+		}
 		}
 		if(Input.GetKeyDown(KeyCode.O) && canSleep ){
 			FallAsleep();

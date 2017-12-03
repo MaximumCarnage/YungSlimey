@@ -98,14 +98,14 @@ GameObject:
   - component: {fileID: 95112553480035074}
   - component: {fileID: 195352183240606174}
   - component: {fileID: 114624885022196570}
-  - component: {fileID: 114597200196383668}
   - component: {fileID: 143146233745851238}
   - component: {fileID: 54136223138002966}
   - component: {fileID: 114951732225511750}
   - component: {fileID: 136490863247980482}
+  - component: {fileID: 114974434605081814}
   m_Layer: 0
   m_Name: SpiderPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1231,14 +1231,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931338619177530}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0.4100544, z: -0.002422297}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4171424612987996}
   m_Father: {fileID: 4746345957085488}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!4 &4656208435938004
 Transform:
   m_ObjectHideFlags: 1
@@ -1297,9 +1297,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084897475121350}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 115.59895, y: 14.278457, z: 136.43652}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -28.36, y: 4.866, z: -58.64}
+  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_Children:
   - {fileID: 4761530177066662}
   - {fileID: 4640415831413400}
@@ -1308,7 +1308,7 @@ Transform:
   - {fileID: 4487347308946016}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4748710456241716
 Transform:
   m_ObjectHideFlags: 1
@@ -1483,7 +1483,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -1505,31 +1505,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114597200196383668
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1084897475121350}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ed5106e034ad940b0628ccaf0a687b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_moveStatus: idle
-  m_walkByDefault: 1
-  m_gravity: 20
-  playGameContainer: {fileID: 0}
-  astralPrefab: {fileID: 1607313069891068, guid: cfb407e1b1419924b9f23de5753eb8f0,
-    type: 2}
-  m_weaponHitBox: {fileID: 0}
-  playerCamera: {fileID: 0}
-  m_jumpSpeed: 8
-  m_runSpeed: 10
-  m_walkSpeed: 4
-  m_turnSpeed: 250
-  m_moveBackwardsMultiplier: 0.75
-  isSleeping: 0
 --- !u!114 &114624885022196570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1557,6 +1532,30 @@ MonoBehaviour:
   m_health: 100
   isSleeping: 0
   m_anim: {fileID: 95112553480035074}
+--- !u!114 &114974434605081814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1084897475121350}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ed5106e034ad940b0628ccaf0a687b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_moveStatus: idle
+  m_walkByDefault: 1
+  m_gravity: 20
+  playGameContainer: {fileID: 0}
+  astralPrefab: {fileID: 0}
+  m_weaponHitBox: {fileID: 0}
+  playerCamera: {fileID: 0}
+  m_jumpSpeed: 8
+  m_runSpeed: 10
+  m_walkSpeed: 4
+  m_turnSpeed: 250
+  m_moveBackwardsMultiplier: 0.75
+  isSleeping: 0
 --- !u!136 &136490863247980482
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1566,10 +1565,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.5270424
+  m_Radius: 0.9196854
+  m_Height: 1.8393708
   m_Direction: 1
-  m_Center: {x: 0, y: 0.597558, z: 0}
+  m_Center: {x: -0.0535965, y: 0.73986775, z: 0}
 --- !u!137 &137053500083967618
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1940,14 +1939,14 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!195 &195352183240606174
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084897475121350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
