@@ -37,7 +37,7 @@ public class WanderAI : MonoBehaviour {
             timer = 0;
 			
         }
-        
+            
         if(agent.remainingDistance <=2f && m_aggro == true){
             agent.isStopped=true;
         }
