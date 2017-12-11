@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AstralController : MonoBehaviour {
 	public string m_moveStatus = "idle";
@@ -125,6 +126,7 @@ public class AstralController : MonoBehaviour {
 		
 		posessTarget.GetComponent<RPGCharacterController>().enabled=true;
 		playerCamera.GetComponent<CameraController>().m_target=posessTarget.transform;
+		posessTarget.GetComponent<NavMeshAgent>().enabled=false;
 		posessTarget.GetComponent<Health>().WakeUp();
 		posessTarget.GetComponent<Health>().m_health=100;
 		Destroy(gameObject);
