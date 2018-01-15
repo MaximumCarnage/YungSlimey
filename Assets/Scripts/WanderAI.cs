@@ -8,11 +8,13 @@ public class WanderAI : MonoBehaviour {
     private Animator m_anim;
     private Transform target;
     private NavMeshAgent agent;
+    private Health m_healthscript;
     private float timer;
     private float dist;
     private bool m_aggro;
     
   void Start () {
+         m_healthscript = GetComponent<Health>();
         agent = GetComponent<NavMeshAgent> ();
         timer = wanderTimer;
 		agent.updateUpAxis = false;
@@ -23,6 +25,7 @@ public class WanderAI : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         timer += Time.deltaTime;
+        
     if(dist!=Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete&&agent.remainingDistance == 0){
         
          m_anim.SetBool("isWalking",false);
@@ -60,7 +63,7 @@ public class WanderAI : MonoBehaviour {
     }
 	void OnTriggerStay(Collider other){
 		
-		if(other.gameObject.tag == "PlayerBody"){
+		if(other.gameObject.tag == "PlayerBody" && this.enabled == true){
             m_aggro=true;
 			agent.SetDestination(other.gameObject.transform.position);
             m_anim.SetBool("Aggro",true);
@@ -68,7 +71,7 @@ public class WanderAI : MonoBehaviour {
         
 	}
 	void OnTriggerExit(Collider other){
-      if(other.gameObject.tag == "PlayerBody"){
+      if(other.gameObject.tag == "PlayerBody" && this.enabled == true){
 		Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);
             m_anim.SetBool("Aggro",false);

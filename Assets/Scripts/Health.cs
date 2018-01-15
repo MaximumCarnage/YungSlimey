@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Health : MonoBehaviour {
 	public int m_health = 100;
@@ -17,8 +18,15 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(m_health == 0){
+		if(m_health == 0 ){
 			FallAsleep();
+			if(this.gameObject.tag == "Enemy")
+			{
+				m_anim.SetBool("Aggro",false);
+				this.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+				this.gameObject.GetComponent<WanderAI>().enabled = false;
+				
+			}
 		}
 		
 	}
@@ -37,7 +45,7 @@ public class Health : MonoBehaviour {
 
 	}
 	public void FallAsleep(){
-		Debug.Log("We Get here");
+		GetComponent<RPGCharacterController>().enabled = false;
 		isSleeping = true;
 		m_anim.SetBool("Asleep",true);
 	}

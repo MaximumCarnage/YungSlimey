@@ -24,7 +24,6 @@ public class HealthManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(m_currentHealth);
 		if(m_currentHealth!=m_healthScript.m_health){
 
 		m_currentHealth=m_healthScript.m_health;

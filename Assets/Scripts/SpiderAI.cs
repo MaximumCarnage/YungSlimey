@@ -22,7 +22,7 @@ public class SpiderAI : MonoBehaviour {
  
     // Update is called once per frame
     void Update () {
-         Debug.Log("Spiders Health: "+gameObject.GetComponent<Health>().m_health);
+        
         timer += Time.deltaTime;
     if(dist!=Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete&&agent.remainingDistance == 0){
         

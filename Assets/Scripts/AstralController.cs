@@ -36,7 +36,6 @@ public class AstralController : MonoBehaviour {
 	}
 
 	void Update(){
-		Debug.Log(m_walkSpeed);
 		m_moveStatus = "idle";
 		m_isWalking = m_walkByDefault;
 
@@ -123,7 +122,7 @@ public class AstralController : MonoBehaviour {
 
 	 }
 	 void Posess(GameObject posessTarget){
-		
+		posessTarget.GetComponent<CharacterController>().enabled = true;
 		posessTarget.GetComponent<RPGCharacterController>().enabled=true;
 		playerCamera.GetComponent<CameraController>().m_target=posessTarget.transform;
 		posessTarget.GetComponent<NavMeshAgent>().enabled=false;
