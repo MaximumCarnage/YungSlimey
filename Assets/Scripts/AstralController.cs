@@ -125,15 +125,18 @@ public class AstralController : MonoBehaviour {
 		posessTarget.GetComponent<CharacterController>().enabled = true;
 		posessTarget.GetComponent<RPGCharacterController>().enabled=true;
 		playerCamera.GetComponent<CameraController>().m_target=posessTarget.transform;
-		posessTarget.GetComponent<NavMeshAgent>().enabled=false;
 		posessTarget.GetComponent<Health>().WakeUp();
 		posessTarget.GetComponent<Health>().m_health=100;
+		if(posessTarget.tag == "Enemy"){
+			posessTarget.GetComponent<NavMeshAgent>().enabled=false;
+		}
 		Destroy(gameObject);
 
 	}
 	private void OnCollisionEnter(Collision other){
-		if((other.gameObject.tag == "Enemy" || other.gameObject.tag == "PlayerBody") && other.gameObject.GetComponent<RPGCharacterController>().isSleeping == true){
+		if((other.gameObject.tag == "Enemy" || other.gameObject.tag == "PlayerBody") && other.gameObject.GetComponent<Health>().isSleeping == true){
 			Posess(other.gameObject);
+			Destroy(this.gameObject);
 		}
 		
 	}

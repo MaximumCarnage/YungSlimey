@@ -115,13 +115,10 @@ public class RPGCharacterController : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.O) && canSleep ){
 			FallAsleep();
 			this.enabled = false;
-			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position+new Vector3(0.5f,0,0.5f), Quaternion.identity);
+			GameObject tempastral=Instantiate(astralPrefab,gameObject.transform.position+new Vector3(1f,0,1f), Quaternion.identity);
 			tempastral.transform.parent = playGameContainer.transform;
 			tempastral.name = "AstralPlayer";
-			
-			
 			tempastral.GetComponent<AstralController>().playerCamera = playerCamera;
-			
 			playerCamera.GetComponent<CameraController>().m_target=tempastral.transform;
 			
 		}
@@ -140,29 +137,24 @@ public class RPGCharacterController : MonoBehaviour {
 		if(m_jumping){
 			m_moveStatus = "jump";
 		}
-		if(Input.GetKeyDown(KeyCode.M)){
-			m_healthscript.takeDamage(10);
-		}
-
-
-
-		//TO DO: FIX PLAYER TAKING MULTIPLE HITS, REMEMBER ALEXS PROBLEM,HASHPATHS*
-		//TO DO: GIVE ANIMALS A PROPER CONTROLLER
+		
+		
 	 }
 	 void OnTriggerEnter(Collider other){
-		 if(other.gameObject.tag == "EnemyWeapon"){
+		 if(other.gameObject.tag == "EnemyWeapon" && this.gameObject.tag != "Enemy"){
 			m_healthscript.takeDamage(10);
-			
-			//other.gameObject.GetComponent<SwordStrike>().m_WeaponDamage
 		 }
 	 }
 
 	public void FallAsleep(){
+		this.enabled = false;
 		isSleeping = true;
+		m_healthscript.isSleeping =true;
 		m_animationController.SetBool("Asleep",true);
 	}
 	public void WakeUp(){
 		isSleeping = false;
+		m_healthscript.isSleeping = false;
 		m_animationController.SetBool("Asleep",false);
 	}
 }

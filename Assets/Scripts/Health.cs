@@ -20,13 +20,6 @@ public class Health : MonoBehaviour {
 	void Update () {
 		if(m_health == 0 ){
 			FallAsleep();
-			if(this.gameObject.tag == "Enemy")
-			{
-				m_anim.SetBool("Aggro",false);
-				this.gameObject.GetComponent<NavMeshAgent>().enabled = false;
-				this.gameObject.GetComponent<WanderAI>().enabled = false;
-				
-			}
 		}
 		
 	}
@@ -46,12 +39,28 @@ public class Health : MonoBehaviour {
 	}
 	public void FallAsleep(){
 		GetComponent<RPGCharacterController>().enabled = false;
-		isSleeping = true;
+		if(this.gameObject.tag == "Enemy" && isSleeping == false)
+			{
+				isSleeping = true;
+				m_anim.SetBool("Aggro",false);
+				this.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+				this.gameObject.GetComponent<SphereCollider>().enabled = false;
+				if(this.gameObject.name == "Lion"){
+					this.gameObject.GetComponent<WanderAI>().enabled = false;
+				}
+				else if(this.gameObject.name == "Spiders"){
+					this.gameObject.GetComponent<SpiderAI>().enabled = false;
+				}
+			}
+		
+		
 		m_anim.SetBool("Asleep",true);
+		m_anim.SetBool("isWalking",false);
 	}
 	public void WakeUp(){
 		isSleeping = false;
 		m_anim.SetBool("Asleep",false);
+	
 	}
 
 }

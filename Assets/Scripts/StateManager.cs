@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class StateManager : MonoBehaviour {
-private GameObject m_activeState;
+public int m_CrystalCount;
 public GameObject[] m_gameStates;
 public GameObject m_maincam;
+public GameObject m_TipCanvas;
+public Transform m_victoryTarget;
+public Transform m_victoryPlayer;
+private GameObject m_activeState;
 private CameraController m_camPlayScript;
 private CamSwivel m_camMenuScript;
+
 
 
 	// Use this for initialization
@@ -25,9 +30,11 @@ private CamSwivel m_camMenuScript;
 	}
 	
 
-	// Update is called once per frame
-	void Update () {
-	
+	void Update(){
+		if(m_CrystalCount == 2){
+			EndGame();
+			m_CrystalCount = 0;
+		}
 		
 	}
 	IEnumerator Splash(){
@@ -56,13 +63,18 @@ private CamSwivel m_camMenuScript;
 		m_activeState.SetActive(false);
 		m_activeState = m_gameStates[2];
 		m_activeState.SetActive(true);
+		m_TipCanvas.GetComponent<TipCanvas>().tips();
 	}
 
-	public void GameOver(){
+	
+
+	public void EndGame(){
+		m_camPlayScript.enabled = false;
 		m_activeState.SetActive(false);
 		m_activeState = m_gameStates[3];
 		m_activeState.SetActive(true);
-		
+		m_maincam.transform.position = m_victoryTarget.position;
+		m_maincam.transform.LookAt(m_victoryPlayer);
 	}
 	
 
